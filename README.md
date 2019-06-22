@@ -13,11 +13,11 @@ or
 Example: tempgen project1
 
 
-## Availabe Extensions
+## Available Extensions
 
-#### .c
-#### .cpp
-#### .html
-#### .java
-#### .pas
-#### .py
+* .c
+* .cpp
+* .html
+* .java
+* .pas
+* .py
