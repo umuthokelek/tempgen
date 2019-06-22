@@ -11,3 +11,13 @@ or
 ### tempgen [filename]
 
 Example: tempgen project1
+
+
+## Availabe Extensions
+
+#### .c
+#### .cpp
+#### .html
+#### .java
+#### .pas
+#### .py
