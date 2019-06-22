@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# Tempgen: A command-line Template Generator
+# https://github.com/umuthokelek/tempgen
+#
+# The GNU General Public License v3.0
+#
+# Copyright (c) 2018-2019 Umut Hökelek
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
+testpath=/usr/local/bin
+
+fullname=$1
+name=${fullname%%.*}
+extension=${fullname#*.}
+
+if [[ -z "$fullname" ]];
+then
+	mkdir untitled
+	touch untitled/Makefile
+	touch untitled/untitled
+
+	else
+		mkdir $name
+
+		if [[ $extension == 'c' ]]
+		then
+			. $testpath/templates/c.sh
+
+		elif [[ $extension == 'cpp' ]]
+		then
+			. $testpath/templates/cpp.sh
+
+		elif [[ $extension == 'pas' ]]
+		then
+			. $testpath/templates/pas.sh
+
+		elif [[ $extension == 'py' ]]
+		then
+			. $testpath/templates/py.sh
+
+		elif [[ $extension == 'java' ]]
+		then
+			. $testpath/templates/java.sh
+
+		elif [[ $extension == 'html' ]]
+		then
+			. $testpath/templates/html.sh
+
+		elif [[ $extension == $fullname ]]
+		then
+			touch $name/$name
+			touch $name/Makefile
+
+		else
+			echo "Undefined extension"
+			touch $name/$fullname
+		fi
+fi
+
