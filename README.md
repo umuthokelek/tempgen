@@ -2,13 +2,13 @@
 
 ## Usage
 
-### tempgen [filename].[extension]
+* tempgen [filename].[extension]
 
 Example: tempgen project1.c
 
 or
 
-### tempgen [filename]
+* tempgen [filename]
 
 Example: tempgen project1
 
